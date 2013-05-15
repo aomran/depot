@@ -17,9 +17,9 @@ class LineItem < ActiveRecord::Base
 
   def decrement_or_destroy
   	if quantity > 1
-  		self.decrement!(:quantity)
+  		decrement!(:quantity)
     else
-      self.destroy
+      destroy
     end
   end
 end
