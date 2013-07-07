@@ -19,7 +19,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery-ui
+//= require jquery.ui.core
+//= require jquery.ui.effect.all
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
