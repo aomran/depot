@@ -22,5 +22,6 @@
 //= require jquery.ui.core
 //= require jquery.ui.effect.all
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
