@@ -1,7 +1,7 @@
 $('#notice').hide();
 
 // at start the cart is hidden, when one item is added then show it
-if ($('#cart .items tr').length == 2) {$('#cart').show('blind', 200)};
+if ($('#cart .items tr').length == 1) {$('#cart').show('blind', 200)};
 
 // re-render the cart partial after we add an item
 $('#cart').html("<%= escape_javascript render(@cart) %>");

@@ -1,2 +1,6 @@
+// Whenever we delete a line_item, we reload the cart partial and highlight it
 $('#cart').html("<%= escape_javascript render(@cart) %>");
 $('#current_item').effect("highlight", {color: '#88ff88'}, 1000);
+
+// if there's only one item then hide the cart after deleting the item
+if ($('#cart .items tr').length == 1) {$('#cart').hide('blind', 200)};
