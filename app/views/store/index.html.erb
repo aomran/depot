@@ -12,14 +12,14 @@
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>
-    <tr>
+    <tr class="entry">
       <td class="span3"><%= image_tag(product.image_url, class: "img-polaroid") %></td>
       <td class="span9">
         <h3><%= product.title %></h3>
         <%= sanitize(product.description) %>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price) %></span>
-          <i class='icon-shopping-cart'></i><%= button_to raw("Add to Cart"), line_items_path(product_id: product), {remote: true, class: "btn btn-success"} %>
+          <i class='icon-book'></i><%= button_to raw("Add to Cart"), line_items_path(product_id: product), {remote: true, class: "btn btn-success"} %>
         </div>
       </td>
     </tr>

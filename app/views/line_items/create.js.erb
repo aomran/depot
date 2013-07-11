@@ -7,4 +7,6 @@ $('#cart').show('blind', 200);
 $('#cart').html("<%= escape_javascript render(@cart) %>");
 
 // highlight the item that was added
-$('#current_item').effect("highlight", {color: '#88ff88'}, 1000);
+// $('tr.item_<%= @line_item.product_id %>').effect("highlight", {color: '#88ff88'}, 1000);
+$('#cart .success').removeClass('success');
+$('.item_<%= @line_item.product_id %>').addClass("success");
