@@ -1,42 +1,46 @@
-<!-- START:head -->
 <!DOCTYPE html>
 <html>
 <head>
-<!-- START_HIGHLIGHT -->
-  <title>Pragprog Books Online Store</title>
-<!-- END_HIGHLIGHT -->
+  <title>Ahmed's Online Store</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<!-- END:head -->
 
-<body class="<%= controller.controller_name %>">
-<!-- START_HIGHLIGHT -->
-  <div id="banner">
-    <%= image_tag("logo.png") %>
-    <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
-  </div>
-  <div id="columns">
-    <div id="side">
+
+<body>
+
+
+<!-- Header Title -->
+<div class="hero-unit">
+  <h1>Ahmed's Online Store</h1>
+  <p>Welcome to my store, I sell stuff here and trust me it's good.</p>
+</div>
+
+
+<div class="row">
+    <div class="span4 well">
+
+      <!-- Side Navigation -->
+      <ul class="nav nav-list">
+        <li class="nav-header">Navigation</li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Questions</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <!-- Cart, which is hidden at first -->
       <% if @cart %>
         <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
             <%= render @cart %>
         <% end %>
       <% end %>
-      <ul>
-        <li><a href="http://www....">Home</a></li>
-        <li><a href="http://www..../faq">Questions</a></li>
-        <li><a href="http://www..../news">News</a></li>
-        <li><a href="http://www..../contact">Contact</a></li>
-      </ul>
     </div>
-    <div id="main">
-<!-- END_HIGHLIGHT -->
-      <%= yield %><!-- <label id="code.depot.e.include"/> -->
-<!-- START_HIGHLIGHT -->
+
+    <div class="span8">
+      <%= yield %>
     </div>
-  </div>
-<!-- END_HIGHLIGHT -->
+</div>
 </body>
 </html>
