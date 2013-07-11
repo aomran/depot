@@ -6,20 +6,25 @@
 <% if @counter > 5 %>
 <p class="notice">You have visited this page <%= pluralize(@counter, "time")%> without adding anything to the cart.</p>
 <% end %>
+
+
+<table class="table table-hover">
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>
-      <div class="entry">
-        <%= image_tag(product.image_url) %>
+    
+    <tr>
+      <td><%= image_tag(product.image_url) %></td>
+      <td>
         <h3><%= product.title %></h3>
         <%= sanitize(product.description) %>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price) %></span>
-<!-- START_HIGHLIGHT -->
-          <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
-<!-- END_HIGHLIGHT -->
+          <i class='icon-shopping-cart'></i><%= button_to raw("Add to Cart"), line_items_path(product_id: product), {remote: true, class: "btn btn-success"} %>
         </div>
-      </div>
+      </td>
+    </tr>
     <% end %>
   <% end %>
 <% end %>
+</table>
