@@ -6,5 +6,5 @@
 		<td class="span1"><%= line_item.quantity %> </td>
 		<td class="span7"><%= line_item.product.title %></td>
 		<td class="item_price span3"><%= number_to_currency(line_item.total_price) %></td>
-		<td class="span1"><%= link_to raw('<i class="icon-trash"></i>'), decrement_line_item_path(line_item), method: :post, remote: true, class: "btn btn-danger btn-mini" %></td>
+		<td class="span1"><%= link_to raw('<i class="icon-trash"></i>'), decrement_line_item_path(line_item), method: :patch, remote: true, class: "btn btn-danger btn-mini" %></td>
 	</tr>

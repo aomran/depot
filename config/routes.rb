@@ -11,7 +11,7 @@ Depot::Application.routes.draw do
 
   resources :line_items do 
     member do
-      post 'decrement'
+      patch 'decrement'
     end
   end
 
