@@ -33,6 +33,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+end
+
 group :development do
 	gem 'guard'
   gem 'guard-livereload'
@@ -44,6 +49,13 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
+ruby "2.0.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
